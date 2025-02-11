@@ -12,6 +12,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        jersey15: ["var(--font-jersey15)"],
+      },
     },
   },
   plugins: [],
