@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Twemoji from 'react-twemoji';
 
 interface Flag {
   id: number;
@@ -15,6 +16,7 @@ const FlagColumn: React.FC<FlagColumnProps> = ({ direction = 'up' }) => {
   const [isVisible, setIsVisible] = useState(true);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const animationRef = useRef<NodeJS.Timeout | null>(null);
+
   const GENERATION_INTERVAL = 2000; // Flag every 2 seconds
 
   const generateFlag = (): Flag => {
@@ -28,13 +30,11 @@ const FlagColumn: React.FC<FlagColumnProps> = ({ direction = 'up' }) => {
 
   const startFlagGeneration = () => {
     if (intervalRef.current) return; // Prevent multiple intervals
-
     intervalRef.current = setInterval(() => {
       setFlags((prev: Flag[]) => {
         const filtered = prev.filter(flag =>
           direction === 'up' ? flag.position > -30 : flag.position < 130
         );
-
         return filtered.length < 50 ? [...filtered, generateFlag()] : filtered;
       });
     }, GENERATION_INTERVAL);
@@ -51,7 +51,6 @@ const FlagColumn: React.FC<FlagColumnProps> = ({ direction = 'up' }) => {
     const handleVisibilityChange = () => {
       setIsVisible(document.visibilityState === 'visible');
     };
-
     document.addEventListener('visibilitychange', handleVisibilityChange);
     return () => {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
@@ -61,7 +60,6 @@ const FlagColumn: React.FC<FlagColumnProps> = ({ direction = 'up' }) => {
   useEffect(() => {
     if (isVisible) {
       startFlagGeneration();
-
       animationRef.current = setInterval(() => {
         setFlags((prev: Flag[]) => prev.map(flag => ({
           ...flag,
@@ -70,13 +68,11 @@ const FlagColumn: React.FC<FlagColumnProps> = ({ direction = 'up' }) => {
       }, 50);
     } else {
       stopFlagGeneration();
-
       if (animationRef.current) {
         clearInterval(animationRef.current);
         animationRef.current = null;
       }
     }
-
     return () => {
       stopFlagGeneration();
       if (animationRef.current) clearInterval(animationRef.current);
@@ -88,13 +84,15 @@ const FlagColumn: React.FC<FlagColumnProps> = ({ direction = 'up' }) => {
       {flags.map(flag => (
         <div
           key={flag.id}
-          className="absolute xl:text-10xl xl:text-16xl lg:text-9xl text-8xl transform transition-all duration-300 hover:scale-125"
+          className="absolute transform transition-all duration-300 hover:scale-125"
           style={{
             top: `${flag.position}%`,
-            opacity: Math.min(0.7, Math.max(0, (0.7 - Math.abs(flag.position - 50) / 80)))
+            opacity: Math.min(0.7, Math.max(0, (0.6 - Math.abs(flag.position - 50) / 80)))
           }}
         >
-          {flag.emoji}
+          <div className="lg:scale-[2] md:scale-[2.75] scale-[1.5]">
+            <Twemoji>{flag.emoji}</Twemoji>
+          </div>
         </div>
       ))}
     </div>
