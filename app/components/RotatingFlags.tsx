@@ -7,14 +7,19 @@ import ConvertKitForm from "./ConvertKit";
 
 const LandingPage: FC = () => {
   useEffect(() => {
-    const emojis = ["😀", "🥺", "❤️‍🩹", "💻", "🫠", "💖", "🙏🏽", "🫡", "🙏", "😅", "🤣", "😘", "😗"];
+    const emojis = ["😀", "🥺", "❤️‍🩹", "🫠", "💖", "🙏🏽", "😅", "🤣", "😘", "😗", "🙏",];
     let currentIndex = 0;
 
     function rotateEmoji() {
-      const emojiElement = document.getElementById("rotating-emoji");
+      const desktopEmoji = document.getElementById("rotating-emoji-desktop");
+      const mobileEmoji = document.getElementById("rotating-emoji-mobile");
       currentIndex = (currentIndex + 1) % emojis.length;
-      if (emojiElement) {
-        emojiElement.textContent = emojis[currentIndex];
+
+      if (desktopEmoji) {
+        desktopEmoji.textContent = emojis[currentIndex];
+      }
+      if (mobileEmoji) {
+        mobileEmoji.textContent = emojis[currentIndex];
       }
     }
 
@@ -69,7 +74,7 @@ const LandingPage: FC = () => {
             className="flex-1 text-right"
           >
             <span className="text-white">
-              made with <span id="rotating-emoji">😀</span>
+              made with <span id="rotating-emoji-desktop">😀</span>
             </span>
           </motion.div>
         </div>
@@ -108,7 +113,7 @@ const LandingPage: FC = () => {
           </a>
           <br />
           <span className="text-white">
-            made with <span id="rotating-emoji">😀</span>
+            made with <span id="rotating-emoji-mobile">😀</span>
           </span>
         </motion.div>
       </div>
