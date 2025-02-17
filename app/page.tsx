@@ -11,7 +11,7 @@ const jersey15 = Jersey_15({
 
 export const metadata = {
   title: 'Capi House',
-  description: 'Residency for immigrant founders',
+  description: 'Home for immigrant founders',
 }
 
 
