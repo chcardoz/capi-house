@@ -58,7 +58,7 @@ const ConvertKitForm = () => {
             target="_blank" 
             rel="nofollow"
           >
-            Built with Kit
+            Built with love!
           </a>
         </div>
       </div>
