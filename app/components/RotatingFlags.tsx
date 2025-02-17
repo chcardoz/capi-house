@@ -9,23 +9,20 @@ const LandingPage: FC = () => {
   return (
     <div className="min-h-screen flex flex-col md:flex-row justify-center">
       {/* Left Section */}
-      <div className="w-full h-screen md:w-1/2 bg-black flex justify-center items-center gap-14 md:gap-24 overflow-hidden">
+      <div className="w-full h-screen md:w-1/3 bg-black flex justify-center items-center overflow-hidden">
         <FlagColumn direction="up" />
-        <FlagColumn direction="down" />
-        <FlagColumn direction="up" />
-        <FlagColumn direction="down" />
       </div>
 
       {/* Right Section (Desktop) */}
-      <div className="w-full hidden md:w-1/2 bg-gradient-to-br from-blue-950 to-black md:flex flex-col justify-end p-7 z-10">
+      <div className="w-full hidden md:w-2/3 bg-gradient-to-br from-blue-950 to-black md:flex flex-col justify-end p-7 z-10">
         <h1 className="text-4xl md:text-6xl lg:text-9xl font-bold text-white tracking-tight font-jersey15">
           CAPI HOUSE
         </h1>
         
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
+          initial={{ opacity: 0, x: 30 }} // Moved a little bit more to the left
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
+          exit={{ opacity: 0, x: -30 }} // Moved a little bit more to the left
           transition={{ duration: 0.4 }}
           className="mt-4 bg-gray-900 p-6 rounded-lg w-full"
         >
@@ -33,9 +30,9 @@ const LandingPage: FC = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
+          initial={{ opacity: 0, x: 30 }} // Moved a little bit more to the left
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
+          exit={{ opacity: 0, x: -30 }} // Moved a little bit more to the left
           transition={{ duration: 0.4 }}
           className="mt-4"
         >
@@ -57,9 +54,9 @@ const LandingPage: FC = () => {
         </h1>
         
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
+          initial={{ opacity: 0, x: 30 }} // Moved a little bit more to the left
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
+          exit={{ opacity: 0, x: -30 }} // Moved a little bit more to the left
           transition={{ duration: 0.4 }}
           className="mt-4 bg-gray-900 p-6 rounded-lg w-full"
         >
@@ -67,9 +64,9 @@ const LandingPage: FC = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
+          initial={{ opacity: 0, x: 30 }} // Moved a little bit more to the left
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
+          exit={{ opacity: 0, x: -30 }} // Moved a little bit more to the left
           transition={{ duration: 0.4 }}
           className="mt-4 text-center"
         >
