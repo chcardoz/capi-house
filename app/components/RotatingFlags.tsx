@@ -11,7 +11,7 @@ const tabContent = {
   Home: (
     <div className="bg-gray-900 p-6 rounded-lg w-full">
       <p className="font-sans text-md md:text-lg text-blue-200 max-w-md leading-relaxed tracking-wide">
-        Residency for immigrant founders
+        Home for immigrant founders
       </p>
       <ConvertKitForm/>
     </div>
