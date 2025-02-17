@@ -29,7 +29,7 @@ const ConvertKitForm = () => {
       <div data-style="clean">
         <ul className="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
         <div data-element="fields" data-stacked="false" className="seva-fields formkit-fields">
-          <p className="text-lg text-gray-500 mb-2">
+          <p className="text-2xl text-gray-300 mb-2">
             A home for immigrant founders in SF
           </p>
           <div className="formkit-field">
