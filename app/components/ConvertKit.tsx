@@ -37,7 +37,7 @@ const ConvertKitForm = () => {
               className="font-sans mt-4 p-3 w-full max-w-md rounded-md bg-gray-800 text-white placeholder-gray-500 formkit-input"
               name="email_address" 
               aria-label="Email Address" 
-              placeholder="founder@company.xyz" 
+              placeholder="founder@capi.house" 
               required 
               type="email" 
             />
