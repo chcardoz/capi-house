@@ -1,11 +1,27 @@
 "use client";
 
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { motion } from "framer-motion";
 import FlagColumn from "./FlagColumn";
 import ConvertKitForm from "./ConvertKit";
 
 const LandingPage: FC = () => {
+  useEffect(() => {
+    const emojis = ["😀", "🥺", "❤️‍🩹", "💻", "🫠", "💖", "🙏🏽", "🫡", "🙏", "😅", "🤣", "😘", "😗"];
+    let currentIndex = 0;
+
+    function rotateEmoji() {
+      const emojiElement = document.getElementById("rotating-emoji");
+      currentIndex = (currentIndex + 1) % emojis.length;
+      if (emojiElement) {
+        emojiElement.textContent = emojis[currentIndex];
+      }
+    }
+
+    const intervalId = setInterval(rotateEmoji, 666);
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col md:flex-row justify-center">
       {/* Left Section */}
@@ -20,31 +36,43 @@ const LandingPage: FC = () => {
         </h1>
         
         <motion.div
-          initial={{ opacity: 0, x: 30 }} // Moved a little bit more to the left
+          initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -30 }} // Moved a little bit more to the left
+          exit={{ opacity: 0, x: -30 }}
           transition={{ duration: 0.4 }}
           className="mt-4 bg-gray-900 p-6 rounded-lg w-full"
         >
           <ConvertKitForm />
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 30 }} // Moved a little bit more to the left
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -30 }} // Moved a little bit more to the left
-          transition={{ duration: 0.4 }}
-          className="mt-4"
-        >
-          <a
-            href="https://escapevelocityclub.notion.site/Abouts-and-vybs-1989ec0abd1d80dea99cd58aedcd107a"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white text-lg underline"
+        <div className="flex justify-between mt-4">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 30 }}
+            transition={{ duration: 0.4 }}
+            className="flex-1"
           >
-            abouts and vybs
-          </a>
-        </motion.div>
+            <a
+              href="https://escapevelocityclub.notion.site/Abouts-and-vybs-1989ec0abd1d80dea99cd58aedcd107a"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white text-lg underline"
+            >
+              abouts and vybs
+            </a>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -30 }}
+            transition={{ duration: 0.4 }}
+            className="flex-1 text-right"
+          >
+            <span className="text-white">
+              made with <span id="rotating-emoji">😀</span>
+            </span>
+          </motion.div>
+        </div>
       </div>
 
       {/* Mobile Fixed Bottom Section */}
@@ -54,9 +82,9 @@ const LandingPage: FC = () => {
         </h1>
         
         <motion.div
-          initial={{ opacity: 0, x: 30 }} // Moved a little bit more to the left
+          initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -30 }} // Moved a little bit more to the left
+          exit={{ opacity: 0, x: -30 }}
           transition={{ duration: 0.4 }}
           className="mt-4 bg-gray-900 p-6 rounded-lg w-full"
         >
@@ -64,9 +92,9 @@ const LandingPage: FC = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 30 }} // Moved a little bit more to the left
+          initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -30 }} // Moved a little bit more to the left
+          exit={{ opacity: 0, x: -30 }}
           transition={{ duration: 0.4 }}
           className="mt-4 text-center"
         >
@@ -78,6 +106,10 @@ const LandingPage: FC = () => {
           >
             abouts and vybs
           </a>
+          <br />
+          <span className="text-white">
+            made with <span id="rotating-emoji">😀</span>
+          </span>
         </motion.div>
       </div>
     </div>
