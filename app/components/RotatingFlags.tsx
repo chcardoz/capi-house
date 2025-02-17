@@ -58,7 +58,7 @@ const LandingPage: FC = () => {
             className="flex-1"
           >
             <a
-              href="https://escapevelocityclub.notion.site/Abouts-and-vybs-1989ec0abd1d80dea99cd58aedcd107a"
+              href="https://ourcapihouse.super.site/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white text-lg underline"
@@ -104,7 +104,7 @@ const LandingPage: FC = () => {
           className="mt-4 text-center"
         >
           <a
-            href="https://escapevelocityclub.notion.site/Abouts-and-vybs-1989ec0abd1d80dea99cd58aedcd107a"
+            href="https://ourcapihouse.super.site/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white text-lg underline"
