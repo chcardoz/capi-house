@@ -29,9 +29,12 @@ const ConvertKitForm = () => {
       <div data-style="clean">
         <ul className="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
         <div data-element="fields" data-stacked="false" className="seva-fields formkit-fields">
+          <p className="text-lg text-gray-500 mb-2">
+            A home for immigrant founders in SF
+          </p>
           <div className="formkit-field">
             <input 
-              className="font-sans mt-4 p-2 w-full max-w-md rounded-md bg-gray-800 text-white placeholder-gray-500 formkit-input"
+              className="font-sans mt-4 p-3 w-full max-w-md rounded-md bg-gray-800 text-white placeholder-gray-500 formkit-input"
               name="email_address" 
               aria-label="Email Address" 
               placeholder="founder@company.xyz" 
@@ -49,7 +52,7 @@ const ConvertKitForm = () => {
             <span>Tell me more!</span>
           </button>
         </div>
-        <div className="formkit-powered-by-convertkit-container">
+        {/* <div className="formkit-powered-by-convertkit-container">
           <a 
             href="https://kit.com/features/forms?utm_campaign=poweredby&utm_content=form&utm_medium=referral&utm_source=dynamic" 
             data-element="powered-by" 
@@ -60,7 +63,7 @@ const ConvertKitForm = () => {
           >
             Built with love!
           </a>
-        </div>
+        </div> */}
       </div>
     </form>
   );

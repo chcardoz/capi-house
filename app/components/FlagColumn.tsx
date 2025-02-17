@@ -24,7 +24,7 @@ const FlagColumn: React.FC<FlagColumnProps> = ({ direction = 'up' }) => {
     return {
       id: Math.random(),
       emoji: flagEmojis[Math.floor(Math.random() * flagEmojis.length)],
-      position: direction === 'up' ? 120 : -20 // Start outside viewport
+      position: direction === 'up' ? 110 : -10 // Start even closer to the viewport
     };
   };
 
@@ -33,7 +33,7 @@ const FlagColumn: React.FC<FlagColumnProps> = ({ direction = 'up' }) => {
     intervalRef.current = setInterval(() => {
       setFlags((prev: Flag[]) => {
         const filtered = prev.filter(flag =>
-          direction === 'up' ? flag.position > -30 : flag.position < 130
+          direction === 'up' ? flag.position > -10 : flag.position < 110
         );
         return filtered.length < 50 ? [...filtered, generateFlag()] : filtered;
       });
