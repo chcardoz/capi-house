@@ -49,7 +49,7 @@ const ConvertKitForm = () => {
             <div className="formkit-spinner">
               <div></div><div></div><div></div>
             </div>
-            <span>Tell me more!</span>
+            <span>Join Us </span>
           </button>
         </div>
         {/* <div className="formkit-powered-by-convertkit-container">
