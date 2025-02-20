@@ -29,9 +29,20 @@ const ConvertKitForm = () => {
       <div data-style="clean">
         <ul className="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
         <div data-element="fields" data-stacked="false" className="seva-fields formkit-fields">
+          
           <p className="text-2xl text-gray-300 mb-2">
             A home for immigrant founders in SF
           </p>
+          <a 
+            href="https://k0gfxe61jra.typeform.com/to/mE17sDvt" 
+            data-element="powered-by" 
+            className="formkit-powered-by-convertkit text-lg" 
+            data-variant="dark" 
+            target="_blank" 
+            rel="nofollow"
+          >
+            First Cohort starts April 1st 2025. Apply here!
+          </a>
           <div className="formkit-field">
             <input 
               className="font-sans mt-4 p-3 w-full max-w-md rounded-md bg-gray-800 text-white placeholder-gray-500 formkit-input"
@@ -49,19 +60,19 @@ const ConvertKitForm = () => {
             <div className="formkit-spinner">
               <div></div><div></div><div></div>
             </div>
-            <span>Join Us </span>
+            <span>Updates </span>
           </button>
         </div>
         {/* <div className="formkit-powered-by-convertkit-container">
           <a 
-            href="https://kit.com/features/forms?utm_campaign=poweredby&utm_content=form&utm_medium=referral&utm_source=dynamic" 
+            href="https://forms.gle/your-google-form-link" 
             data-element="powered-by" 
-            className="formkit-powered-by-convertkit" 
+            className="formkit-powered-by-convertkit text-lg" 
             data-variant="dark" 
             target="_blank" 
             rel="nofollow"
           >
-            Built with love!
+            First cohort starts April 1st. Apply here!
           </a>
         </div> */}
       </div>
