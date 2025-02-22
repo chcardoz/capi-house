@@ -31,7 +31,7 @@ const ConvertKitForm = () => {
         <div data-element="fields" data-stacked="false" className="seva-fields formkit-fields">
           
           <p className="text-2xl text-gray-300 mb-2">
-            A home(not a hacker house) for immigrant founders in SF
+            A home (not a hacker house) for immigrant founders in SF
           </p>
           <a 
             href="https://k0gfxe61jra.typeform.com/to/mE17sDvt" 
