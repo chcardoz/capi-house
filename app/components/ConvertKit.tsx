@@ -41,7 +41,7 @@ const ConvertKitForm = () => {
             target="_blank" 
             rel="nofollow"
           >
-            First Cohort starts April 1st 2025. Apply here!
+            First Cohort starts April 1st 2025. <span className="apply-link font-bold underline">Apply here!</span>
           </a>
           <div className="formkit-field">
             <input 
